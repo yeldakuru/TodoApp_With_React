@@ -8,6 +8,13 @@
   justify-content: center;
 }
 
+.main {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .todo-create {
   display: flex;
   flex-direction: column;
