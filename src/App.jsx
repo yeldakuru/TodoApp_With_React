@@ -9,7 +9,6 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const createTodo = (newTodo) => {
-    debugger;
     setTodos([...todos, newTodo]);
   }
   console.log(todos);
@@ -18,7 +17,7 @@ function App() {
     <div className='App'>
       <div className='main'>
         <TodoCreate onCreateTodo={createTodo} />
-        <TodoList />
+        <TodoList todos={todos} />
       </div>
 
     </div>

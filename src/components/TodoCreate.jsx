@@ -4,14 +4,18 @@ function TodoCreate({ onCreateTodo }) {
 
     const [newTodo, setNewTodo] = useState('');
 
+    const cleareInput = () => {
+        setNewTodo("");
+    }
+
     const createTodo = () => {
         if (!newTodo) return;
-        debugger;
         const request = {
             id: Math.floor(Math.random() * 99999999999),
             content: newTodo
         }
         onCreateTodo(request)
+        cleareInput();
     }
     return (
         <div className='todo-create'>
