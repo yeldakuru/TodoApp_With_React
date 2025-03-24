@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TodoCreate from './components/TodoCreate'
 import TodoList from './components/TodoList'
@@ -11,13 +9,18 @@ function App() {
   const createTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
   }
-  console.log(todos);
 
+
+  const removeTodo = (todoId) => {
+    setTodos([...todos.filter((todo) => todo.id !== todoId)]);
+
+  }
+  console.log(todos);
   return (
     <div className='App'>
       <div className='main'>
         <TodoCreate onCreateTodo={createTodo} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemoveTodo={removeTodo} />
       </div>
 
     </div>
